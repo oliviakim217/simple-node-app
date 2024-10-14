@@ -6,7 +6,7 @@ files:
     destination: /home/ec2-user/simple-node-app
 hooks:
   BeforeInstall:
-    - location: scripts/stop_server.sh
+    - location: scripts/before_install_server.sh
       runas: ec2-user
   AfterInstall:
     - location: scripts/after_install.sh
