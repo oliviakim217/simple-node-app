@@ -1,0 +1,16 @@
+# Define where to place the app files on the EC2 and specify lifecycle hooks for the deployment process.
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ec2-user/simple-node-app
+hooks:
+  BeforeInstall:
+    - location: scripts/stop_server.sh
+      runas: ec2-user
+  AfterInstall:
+    - location: scripts/after_install.sh
+      runas: ec2-user
+  ApplicationStart:
+    - location: scripts/start_server.sh
+      runas: ec2-user
