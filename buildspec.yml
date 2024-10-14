@@ -15,7 +15,7 @@ phases:
     commands:
       - echo "Build complete, packaging the app"
       - zip -r app.zip .
-      - aws s3 cp app.zip s3://your-s3-bucket-name/app.zip
+      - aws s3 cp app.zip s3://okim-node-app-s3/app.zip
 
 artifacts:
   files:
